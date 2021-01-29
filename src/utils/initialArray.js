@@ -7,38 +7,38 @@ import bananaSvg from '../icons/bananas.svg'
 
 export const productsArray = [
   {
-    name: 'Potato',
-    shortDescription: 'A bunch of potatos',
+    name: 'Batatas',
+    shortDescription: 'Um monte de batatas',
     quantity: 5,
     image: potatoSvg
   },
   {
-    name: 'Fish',
-    shortDescription: 'Large Fishs from Brazil',
+    name: 'Peixe',
+    shortDescription: 'Peixe pra fazer Sushi',
     quantity: 3,
     image: fishSvg
   },
   {
-    name: 'Rice',
-    shortDescription: 'Chinese Rice',
+    name: 'Arroz',
+    shortDescription: 'Arroz de boa qualidade',
     quantity: 4,
     image: riceSvg
   },
   {
     name: 'Banana',
-    shortDescription: 'Rare type of Banana',
+    shortDescription: 'Tipo raro de banana',
     quantity: 5,
     image: bananaSvg
   },
   {
-    name: 'Lemon',
-    shortDescription: 'Easy peasy lemon squeezy',
+    name: 'Limão',
+    shortDescription: 'Perfeito para uma torta',
     quantity: 2,
     image: lemonSvg
   },
   {
-    name: 'Soda',
-    shortDescription: 'Drink Water, not Soda',
+    name: 'Refrigerante',
+    shortDescription: 'Água talvez fosse uma melhor ideia',
     quantity: 1,
     image: sodaSvg
   }

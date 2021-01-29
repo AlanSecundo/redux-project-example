@@ -2,6 +2,7 @@ import StoreView from "./components/StoreView";
 import styled from "styled-components";
 import StoreItems from "./components/StoreItems";
 import React from "react";
+import { isMobile } from "react-device-detect";
 
 const AppDiv = styled.div`
   color: white;
@@ -54,7 +55,6 @@ const Conclusion = styled.div`
   align-items: center;
   font-size: 70%;
   @media (max-width: 768px) {
-    
   }
 `;
 
@@ -75,10 +75,9 @@ const Footer = styled.div`
   text-align: center;
 
   @media (max-width: 768px) {
-    position: relative; 
+    position: relative;
     margin-top: 20px;
   }
-
 `;
 
 const Link = styled.a`
@@ -111,20 +110,36 @@ export default function App() {
         <GridContainer>
           <LeftSide>
             <ConclusionLeft>
-              <span>
-                Neste lado da tela, você pode ver os valores que temos
-                armezanados na nossa Store criada com a ajuda do Redux
-              </span>
+              {isMobile ? (
+                <span>
+                  No primeiro bloco, você pode ver os valores que temos
+                  armezanados na nossa Store criada com a ajuda do Redux
+                </span>
+              ) : (
+                <span>
+                  Neste lado da tela, você pode ver os valores que temos
+                  armezanados na nossa Store criada com a ajuda do Redux
+                </span>
+              )}
             </ConclusionLeft>
           </LeftSide>
           <RightSide>
             <Conclusion>
-              <span>
-                Aqui acima, ao clicar em um botão de compra, você está
-                disparando um evento que realiza uma mudança na nossa Store,
-                note a esquerda, como cada clique reflete na alteração do
-                componente com os items listados.
-              </span>
+              {isMobile ? (
+                <span>
+                  Ao clicar em um botão de compra dos outros blocos, você está
+                  disparando um evento que realiza uma mudança na nossa Store,
+                  note a esquerda, como cada clique reflete na alteração do
+                  componente com os items listados.
+                </span>
+              ) : (
+                <span>
+                  Aqui acima, ao clicar em um botão de compra, você está
+                  disparando um evento que realiza uma mudança na nossa Store,
+                  note a esquerda, como cada clique reflete na alteração do
+                  componente com os items listados.
+                </span>
+              )}
             </Conclusion>
           </RightSide>
         </GridContainer>

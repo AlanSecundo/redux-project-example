@@ -15,7 +15,7 @@ export default function StoreView() {
 
   return (
     <Main>
-      <h2>Store Items:</h2>
+      <h2>STORE(Redux):</h2>
       <table>
         <tbody>
           <tr>
