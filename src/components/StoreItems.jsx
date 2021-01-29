@@ -13,6 +13,10 @@ const Main = styled.div`
     opacity: 0.5;
     pointer-events: none;
   }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Card = styled.div`
@@ -24,6 +28,9 @@ const Card = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (max-width: 768px) {
+    margin: 0px 0px 5px 0px;
+  }
 `;
 
 const Button = styled.div`
@@ -40,11 +47,11 @@ const Button = styled.div`
     transform: scale(1.1);
     background-color: #d6837c;
   }
-`
+`;
 
 const SvgImage = styled.img`
   width: 50px;
-`
+`;
 
 export default function StoreItems() {
   const products = useSelector((state) => state.superMarketReducer.products);
@@ -56,7 +63,7 @@ export default function StoreItems() {
     productsResult[index].quantity > 0
       ? (productsResult[index].quantity = productsResult[index].quantity - 1)
       : (productsResult[index].quantity = 0);
-      
+
     dispatch(updateItem(productsResult));
   }
 
@@ -65,7 +72,7 @@ export default function StoreItems() {
       {products.map((el, index) => (
         <Card key={index} className={el.quantity === 0 && `disable`}>
           <h3>{el.name}</h3>
-          <SvgImage src={el.image} alt={el.name}/>
+          <SvgImage src={el.image} alt={el.name} />
           <p>{el.shortDescription}</p>
           <Button onClick={() => buyItem(index)}>Comprar</Button>
         </Card>

@@ -1,7 +1,7 @@
 import StoreView from "./components/StoreView";
 import styled from "styled-components";
 import StoreItems from "./components/StoreItems";
-import React from 'react'
+import React from "react";
 
 const AppDiv = styled.div`
   color: white;
@@ -16,6 +16,11 @@ const GridContainer = styled.div`
 const LeftSide = styled.div`
   grid-column-start: 1;
   grid-column-end: 2;
+  @media (max-width: 768px) {
+    grid-column-start: 1;
+    grid-column-end: 12;
+    margin-bottom: 15px;
+  }
 `;
 
 const StoreArea = styled.div`
@@ -30,6 +35,10 @@ const StoreArea = styled.div`
 const RightSide = styled.div`
   grid-column-start: 3;
   grid-column-end: 12;
+  @media (max-width: 768px) {
+    grid-column-start: 1;
+    grid-column-end: 12;
+  }
 `;
 
 const Header = styled.header`
@@ -44,12 +53,18 @@ const Conclusion = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 70%;
+  @media (max-width: 768px) {
+    
+  }
 `;
 
 const ConclusionLeft = styled.div`
   font-size: 70%;
   padding-top: 3%;
-`
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+`;
 
 const Footer = styled.div`
   position: fixed;
@@ -58,7 +73,13 @@ const Footer = styled.div`
   font-size: 60%;
   width: 100%;
   text-align: center;
-`
+
+  @media (max-width: 768px) {
+    position: relative; 
+    margin-top: 20px;
+  }
+
+`;
 
 const Link = styled.a`
   text-decoration: none;
@@ -68,10 +89,9 @@ const Link = styled.a`
     cursor: pointer;
     text-decoration: underline;
   }
-`
+`;
 
 export default function App() {
-
   return (
     <div>
       <AppDiv>
@@ -92,7 +112,7 @@ export default function App() {
           <LeftSide>
             <ConclusionLeft>
               <span>
-                Neste lado da dela, você pode ver os valores que temos
+                Neste lado da tela, você pode ver os valores que temos
                 armezanados na nossa Store criada com a ajuda do Redux
               </span>
             </ConclusionLeft>
@@ -109,7 +129,9 @@ export default function App() {
           </RightSide>
         </GridContainer>
         <Footer>
-          <Link href="https://www.alansecundo.com/br/" target="blank" >Created By Alan Secundo</Link>
+          <Link href="https://www.alansecundo.com/br/" target="blank">
+            Created By Alan Secundo
+          </Link>
         </Footer>
       </AppDiv>
     </div>
